@@ -1,0 +1,99 @@
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+                <div class="card-header text-center bg-dark text-white">
+                    <h2>Update Task</h2>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="anchorUpdateForm" (ngSubmit)="anchorUpdateForm.status !== 'INVALID' && onUpdate()">
+                        <div class="row">
+                            <!-- Full Name -->
+                            <div class="col-md-6 mb-3">
+                                <label for="custCode" class="form-label">Task No.:</label>
+                                <input type="number" class="form-control" id="custCode" formControlName="custCode"
+                                    [ngClass]="{'is-invalid': getControls('custCode')?.errors && getControls('custCode')?.touched}"
+                                    placeholder="Enter Sr No">
+                                <div *ngIf="getControls('custCode')?.errors && getControls('custCode')?.touched"
+                                    class="invalid-feedback">
+                                    Code is required.
+                                </div>
+                            </div>
+
+                            <!-- Username -->
+                            <div class="col-md-6 mb-3">
+                                <label for="topic" class="form-label">Topic:</label>
+                                <input type="text" class="form-control" id="topic" formControlName="topic"
+                                    [ngClass]="{'is-invalid': getControls('topic')?.errors && getControls('topic')?.touched}"
+                                    placeholder="Enter Topic">
+                                <div *ngIf="getControls('topic')?.errors && getControls('topic')?.touched"
+                                    class="invalid-feedback">
+                                    Topic is required.
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6 mb-3">
+                                <label for="referenceLink" class="form-label">Reference Link:</label>
+                                <input type="text" class="form-control" id="referenceLink"
+                                    formControlName="referenceLink"
+                                    [ngClass]="{'is-invalid': getControls('referenceLink')?.errors && getControls('referenceLink')?.touched}"
+                                    placeholder="Enter Reference Link">
+                                <div *ngIf="getControls('referenceLink')?.errors && getControls('referenceLink')?.touched"
+                                    class="invalid-feedback">
+                                    <span *ngIf="getControls('referenceLink')?.errors?.['required']">Reference Link is
+                                        required.</span>
+                                </div>
+                            </div>
+
+                            <!-- Mobile Number -->
+                            <div class="col-md-6 mb-3">
+                                <label for="script" class="form-label">Script:</label>
+                                <textarea class="form-control" id="script" rows="3" formControlName="script"
+                                    [ngClass]="{'is-invalid': getControls('script')?.errors && getControls('script')?.touched}"
+                                    placeholder="Enter Script"></textarea>
+                                <div *ngIf="getControls('script')?.errors && getControls('script')?.touched"
+                                    class="invalid-feedback">
+                                    Address is required.
+                                </div>
+                            </div>
+
+                            <!-- Address -->
+                            <div class="col-md-6 mb-3">
+                                <label for="thumbnailText" class="form-label">Thumbnail Text:</label>
+
+                                <input type="text" class="form-control" id="thumbnailText"
+                                    formControlName="thumbnailText"
+                                    [ngClass]="{'is-invalid': getControls('thumbnailText')?.errors && getControls('thumbnailText')?.touched}"
+                                    placeholder="Enter Thumbnail Text">
+                                <div *ngIf="getControls('thumbnailText')?.errors && getControls('thumbnailText')?.touched"
+                                    class="invalid-feedback">
+                                    Please enter a Script.
+                                </div>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="col-md-6 mb-3">
+                                <label for="remark" class="form-label">Remark:</label>
+                                <input type="text" class="form-control" id="remark" formControlName="remark"
+                                    [ngClass]="{'is-invalid': getControls('remark')?.errors && getControls('remark')?.touched}"
+                                    placeholder="Create Remark">
+                                <div *ngIf="getControls('remark')?.errors && getControls('remark')?.touched"
+                                    class="invalid-feedback">
+                                    Remark is available.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="row">
+                            <div class="d-grid col-md-6 mb-3">
+                                <button type="submit" [disabled]="anchorUpdateForm.status === 'INVALID'" class="btn btn-primary">Update Task</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

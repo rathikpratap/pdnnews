@@ -1,0 +1,87 @@
+* {
+    font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* General Employee Header */
+.employees {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+.bg-light{
+    background-color: #D3D3D3 !important;
+}
+
+/* Card Styling */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Inline Card Details */
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.card-details strong {
+    font-size: 0.9rem;
+    color: #333;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.card-details p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    flex-grow: 1;
+    text-align: right;
+}
+
+/* Circle Avatar */
+.circle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.circle .image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ddd;
+}
+
+.circle .image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Button Styling */
+.card button {
+    width: 48%;
+    font-size: 0.8rem;
+}
+
+/* Utility Adjustments */
+@media (max-width: 768px) {
+    .card-details strong,
+    .card-details p {
+        font-size: 0.8rem;
+    }
+
+    .card button {
+        font-size: 0.75rem;
+    }
+}

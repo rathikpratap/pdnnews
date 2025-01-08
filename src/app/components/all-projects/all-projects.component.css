@@ -1,0 +1,35 @@
+.container {
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
+.card {
+    background-color: #212529;
+    border: none;
+}
+.card-body h6 {
+    margin: 0;
+}
+.table {
+    border-collapse: collapse;
+}
+.table th, .table td {
+    border-top: none;
+}
+.btn-group .btn {
+    margin-right: 5px;
+}
+.btn[aria-expanded="true"] {
+    background-color: green;
+    color: white
+}
+.completed-cell {
+    background-color: #d4edda;
+    color: #155724;
+    font-weight: bold;
+}
+
+.incomplete-cell {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+}

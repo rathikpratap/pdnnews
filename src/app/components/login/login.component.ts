@@ -38,7 +38,13 @@ export class LoginComponent {
         localStorage.setItem('role', res.role);
 
         if(res.role === 'Admin'){
-          alert("LOGGED IN SUCCESSFULL!!!!!!");
+          this.router.navigateByUrl('/admin-dashboard');
+        }else if(res.role === 'Writer'){
+          this.router.navigateByUrl('/writer-home/writer-dashboard');
+        }else if(res.role === 'Raw Editor' || res.role === 'Main Editor'){
+          this.router.navigateByUrl('/editor-home/editor-dashboard');
+        }else if(res.role === 'Content Uploader'){
+          this.router.navigateByUrl('/uploader-home/uploader-projects');
         }
       }else{
         alert(res.message);

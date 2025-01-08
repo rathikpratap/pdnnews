@@ -1,0 +1,132 @@
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+                <div class="card-header text-center bg-dark text-white">
+                    <h2>Update Employee Details</h2>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="empUpdateForm" (ngSubmit)="empUpdateForm.status !== 'INVALID' && onUpdate()">
+                        <div class="row">
+                            <!-- Full Name -->
+                            <div class="col-md-6 mb-3">
+                                <label for="signupName" class="form-label">Full Name:</label>
+                                <input type="text" class="form-control" id="signupName" formControlName="signupName"
+                                    [ngClass]="{'is-invalid': getControls('signupName')?.errors && getControls('signupName')?.touched}"
+                                    placeholder="Enter Your Name">
+                                <div *ngIf="getControls('signupName')?.errors && getControls('signupName')?.touched" class="invalid-feedback">
+                                    Name is required.
+                                </div>
+                            </div>
+
+                            <!-- Username -->
+                            <div class="col-md-6 mb-3">
+                                <label for="signupUsername" class="form-label">User Name:</label>
+                                <input type="text" class="form-control" id="signupUsername" formControlName="signupUsername"
+                                    [ngClass]="{'is-invalid': getControls('signupUsername')?.errors && getControls('signupUsername')?.touched}"
+                                    placeholder="Enter Your Username">
+                                <div *ngIf="getControls('signupUsername')?.errors && getControls('signupUsername')?.touched" class="invalid-feedback">
+                                    Username is required.
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6 mb-3">
+                                <label for="signupEmail" class="form-label">Email:</label>
+                                <input type="email" class="form-control" id="signupEmail" formControlName="signupEmail"
+                                    [ngClass]="{'is-invalid': getControls('signupEmail')?.errors && getControls('signupEmail')?.touched}"
+                                    placeholder="Enter Your Email">
+                                <div *ngIf="getControls('signupEmail')?.errors && getControls('signupEmail')?.touched" class="invalid-feedback">
+                                    <span *ngIf="getControls('signupEmail')?.errors?.['required']">Email is required.</span>
+                                    <span *ngIf="getControls('signupEmail')?.errors?.['pattern']">Enter a valid email address.</span>
+                                </div>
+                            </div>
+
+                            <!-- Mobile Number -->
+                            <div class="col-md-6 mb-3">
+                                <label for="signupNumber" class="form-label">Mobile Number:</label>
+                                <input type="text" class="form-control" id="signupNumber" formControlName="signupNumber"
+                                    [ngClass]="{'is-invalid': getControls('signupNumber')?.errors && getControls('signupNumber')?.touched}"
+                                    placeholder="Enter Mobile Number">
+                                <div *ngIf="getControls('signupNumber')?.errors && getControls('signupNumber')?.touched" class="invalid-feedback">
+                                    Please enter a valid mobile number.
+                                </div>
+                            </div>
+
+                            <!-- Gender -->
+                            <div class="col-md-6 mb-3">
+                                <label for="signupGender" class="form-label">Gender:</label>
+                                <select class="form-select" id="signupGender" formControlName="signupGender"
+                                    [ngClass]="{'is-invalid': getControls('signupGender')?.errors && getControls('signupGender')?.touched}">
+                                    <option value="">Choose Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                                <div *ngIf="getControls('signupGender')?.errors && getControls('signupGender')?.touched" class="invalid-feedback">
+                                    Gender is required.
+                                </div>
+                            </div>
+
+                            <!-- Role -->
+                            <div class="col-md-6 mb-3">
+                                <label for="signupRole" class="form-label">Role:</label>
+                                <select class="form-select" id="signupRole" formControlName="signupRole"
+                                    [ngClass]="{'is-invalid': getControls('signupRole')?.errors && getControls('signupRole')?.touched}">
+                                    <option value="Select Role">Select Employee Role</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Writer">Writer</option>
+                                    <option value="Thumbnail Designer">Thumbnail Designer</option>
+                                    <option value="VoiceOver Artist/ Anchor">VoiceOver Artist/ Anchor</option>
+                                    <option value="Raw Editor">Raw Editor</option>
+                                    <option value="Final Editor">Final Editor</option>
+                                    <option value="Content Uploader">Content Uploader</option>
+                                </select>
+                                <div *ngIf="getControls('signupRole')?.errors && getControls('signupRole')?.touched" class="invalid-feedback">
+                                    Role is required.
+                                </div>
+                            </div>
+
+                            <!-- Address -->
+                            <div class="col-md-6 mb-3">
+                                <label for="signupAddress" class="form-label">Address:</label>
+                                <textarea class="form-control" id="signupAddress" rows="3" formControlName="signupAddress"
+                                    [ngClass]="{'is-invalid': getControls('signupAddress')?.errors && getControls('signupAddress')?.touched}"
+                                    placeholder="Enter Your Address"></textarea>
+                                <div *ngIf="getControls('signupAddress')?.errors && getControls('signupAddress')?.touched" class="invalid-feedback">
+                                    Address is required.
+                                </div>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="col-md-6 mb-3">
+                                <label for="signupPassword" class="form-label">Password:</label>
+                                <input type="text" class="form-control" id="signupPassword" formControlName="signupPassword"
+                                    [ngClass]="{'is-invalid': getControls('signupPassword')?.errors && getControls('signupPassword')?.touched}"
+                                    placeholder="Create Password">
+                                <div *ngIf="getControls('signupPassword')?.errors && getControls('signupPassword')?.touched" class="invalid-feedback">
+                                    <ul class="mb-0">
+                                        <li *ngIf="getControls('signupPassword')?.errors?.['required']">Password is required.</li>
+                                        <li *ngIf="getControls('signupPassword')?.errors?.['pattern']">Password must contain:
+                                            <ul>
+                                                <li>At least 1 uppercase letter</li>
+                                                <li>At least 1 lowercase letter</li>
+                                                <li>At least 1 number and 1 special character</li>
+                                                <li>Minimum length of 8 characters</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button type="submit" [disabled]="empUpdateForm.status === 'INVALID'" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

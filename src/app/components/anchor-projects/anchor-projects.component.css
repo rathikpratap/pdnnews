@@ -1,0 +1,24 @@
+.container {
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
+.card {
+    background-color: #212529;
+    border: none;
+}
+.card-body h6 {
+    margin: 0;
+}
+.table {
+    border-collapse: collapse;
+}
+.table th, .table td {
+    border-top: none;
+}
+.btn-group .btn {
+    margin-right: 5px;
+}
+.btn[aria-expanded="true"] {
+    background-color: green;
+    color: white
+}
